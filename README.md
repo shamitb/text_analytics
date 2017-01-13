@@ -1,6 +1,6 @@
 # text_analytics
 
-Tried different APIs for text analytics using machine learning including :
+Different APIs for text analytics using machine learning have been tried out including :
 
 MonleyLearn: Taxonomy Classifier: https://app.monkeylearn.com/main/classifiers/cl_b7qAkDMz/tab/tree-sandbox/
 
