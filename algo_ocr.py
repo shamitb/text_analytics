@@ -72,7 +72,7 @@ print algo.pipe(input).result
 print '\n*******************************\n SENTENCE PARSING : \n'
 # **************** Algorithmia - SENTENCE PARSING ****************
 input = {
-  "src":"Algorithmia is dthe best online platform available for machine learning and text analytics.",
+  "src":"Algorithmia is the best online platform available for machine learning and text analytics.",
   "format":"conll",
   "language":"english"
 }
@@ -83,3 +83,28 @@ print '\n*******************************\n CO-REFERENCE : \n'
 # ****************** CO REFERENCE **********************
 algo = client.algo('StanfordNLP/DeterministicCoreferenceResolution/0.1.1')
 print algo.pipe(text).result
+
+print '\n*******************************\n PART-OF-SPEECH (POS) TAGGER : \n'
+# ****************** PART-OF-SPEECH (POS) TAGGER **********************
+algo = client.algo('ApacheOpenNLP/POSTagger/0.1.1')
+print text
+print algo.pipe(text)
+
+print '\n*******************************\n TOKENIZE : \n'
+# ****************** TOKENIZE **********************
+algo = client.algo('ApacheOpenNLP/TokenizeBySentence/0.1.0')
+print algo.pipe(text)
+
+print '\n*******************************\n LDA : \n'
+# ****************** LDA **********************
+algo = client.algo('ApacheOpenNLP/SentenceDetection/0.1.0')
+sentences = algo.pipe(text)
+print sentences
+algo = client.algo('nlp/LDA/1.0.0')
+input = {
+  "docsList": sentences.result,
+  "mode": "quality"
+}
+
+print input
+print algo.pipe(input).result
