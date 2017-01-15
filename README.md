@@ -2,7 +2,7 @@
 
 
 
-Different APIs for text analytics using machine learning were tried including :
+Different APIs for text analytics and SEMANTIC ANALYSIS using machine learning were tried including :
 
 Algorithmia - Many text analytics, NLP and entity extraction algorithms are available as part of their cloud based offering
 
